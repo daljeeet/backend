@@ -11,7 +11,7 @@ const crudAuth = async(req,res,next)=>{
             res.status(400).send({"msg":"authencation required"})
         }
     }catch(err){
-        res.send({"msg":"something went wrong","err":err})
+        res.status(400).send({"msg":"something went wrong","err":err})
     }
 }
 module.exports = crudAuth;
