@@ -3,8 +3,9 @@ require("dotenv").config()
 const crudAuth = async(req,res,next)=>{
     try{
         let token = req.headers.authorization
+        console.log(token)
        // let authId=jwt.decode(token,process.env.key).id
-        res.send(token)
+        res.send({"wait":"sfd;lkj})
 //         if(authId){
 //             req.body={...req.body,author:authId}
 //             next()
