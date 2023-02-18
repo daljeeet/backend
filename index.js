@@ -10,13 +10,11 @@ require("dotenv").config()
 const app = express()
 app.use(express.json())
 app.use(cors())
-
-//===============Routes===================
+//====================Routes=========================
 app.get("/",(req,res)=>res.send("welcome to the home page"))
 app.use("/user",userRoutes)
 app.use("/todos",crudAuth)
 app.use("/todos",todoRoutes)
-
 //=======================Starting the app=============================
 let PORT = process.env.port || 3000;
 app.listen(process.env.port,async()=>{

@@ -2,10 +2,8 @@ const express= require("express")
 const userRoutes = express.Router()
 const User = require("../model/user.model")
 const bcrypt = require("bcrypt")
+require("dotenv").config()
 const jwt = require("jsonwebtoken")
-
-
-
 userRoutes.post("/register",async(req,res)=>{
     let EmailExist = await User.find({email:req.body.email});
     let usernameExist = await User.find({username:req.body.username})
