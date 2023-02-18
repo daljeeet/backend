@@ -41,4 +41,18 @@ userRoutes.post("/login",async(req,res)=>{
 }
 })
 
-module.exports = userRoutes
+userRoutes.get('/',async(req,res)=>{
+    try{
+        let token = req.headers.authorization.split(' ')[1]
+        let authId=jwt.decode(token,process.env.key).id
+            if(authId){
+                   let user = await User.findById({_id:authId});
+                res.send(user.name)
+        }
+    }catch(err){
+        res.status(400).send({'msg':"error","err":err})
+    }
+})
+
+
+module.exports = userRoutes 

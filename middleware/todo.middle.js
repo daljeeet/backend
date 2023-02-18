@@ -13,5 +13,5 @@ const crudAuth = async(req,res,next)=>{
     }catch(err){
         res.send({"msg":"something went wrong"})
     }
-}
+} 
 module.exports = crudAuth;
