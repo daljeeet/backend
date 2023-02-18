@@ -5,7 +5,7 @@ const crudAuth = async(req,res,next)=>{
         let token = req.headers.authorization
         console.log(token)
        // let authId=jwt.decode(token,process.env.key).id
-        res.send({"wait":"sfd;lkj})
+        res.send({"wait":"sfd;lkj"})
 //         if(authId){
 //             req.body={...req.body,author:authId}
 //             next()
